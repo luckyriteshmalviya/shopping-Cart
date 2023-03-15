@@ -1,33 +1,34 @@
-import './Cart.css'
+import "./Cart.css";
 
-const Cart =({cart})=>{
-return(<>
-<h4>Products in Cart :- {cart.length}</h4>
+const Cart = ({ cart }) => {
+  return (
+    <>
+      <h4>Products in Cart :- {cart.length}</h4>
 
-<div>
-{cart.map((item, index) => {
-            return (
-              <div key={index} className="cart-product">
-                <div className="section-one-product-title"> {item.title}</div>
-                <div className="section-one-product-image">
-                  <img
-                    src={item.thumbnail}
-                    width="250px"
-                    alt="product-thumbnail"
-                  />
-                </div>
-                <span className="section-one-product-price">
-                  Price :- {item.price}
-                </span>
-                <div>quantity :- {item.quantity}</div>
-
-                <div>
-                  <b>Amount:- {Number(item.price) * Number(item.quantity)}</b>
-                </div>
+      <div className="cart-product-container">
+        {cart.map((item, index) => {
+          return (
+            <div key={index} className="cart-product">
+              <div className="cart-product-title"> {item.title}</div>
+              <div className="cart-product-image">
+                <img
+                  src={item.thumbnail}
+                  width="100px"
+                  alt="product-thumbnail"
+                />
               </div>
-            );
-          })}</div>
-</>)
-}
+              <span className="cart-product-price">Price :- {item.price}</span>
+              <div>Quantity :- {item.quantity}</div>
 
-export default Cart
+              <div>
+                <b>Amount:- {Number(item.price) * Number(item.quantity)}</b>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+export default Cart;

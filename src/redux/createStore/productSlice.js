@@ -4,24 +4,26 @@ const initialState = {
   isLoading: false,
   productDetails: [],
   cart: [],
+  updatedCart: [],
   value: 0,
 };
 
 export const productDetails = createAsyncThunk("details", async () => {
   const useData = await fetch("https://dummyjson.com/products?limit=15");
   const parsedData = await useData.json();
-  console.log("ap result",parsedData.products)
   return parsedData.products;
 });
 const userSlice = createSlice({
   name: "userSlice",
   initialState,
   reducers: {
-    Total: (state, action)=>{
-        console.log(state, "action", action)
-    state.cart = action.payload
-    }
-   
+    Total: (state, action) => {
+      state.cart = action.payload;
+    },
+
+    Updated: (state, action) => {
+      state.updatedCart = [...state, action.payload];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(productDetails.fulfilled, (state, action) => {

@@ -25,19 +25,16 @@ const Section = () => {
       setCart([modifiedProd]);
       return;
     }
-    let cartList = [...cart];
-    for (let item of cartList) {
+    for (let item of cart) {
       if (item.id === id) {
         item.quantity += 1;
-        setCart([...cartList]);
+        setCart([...cart]);
+        return;
       } else {
         setCart([...cart, modifiedProd]);
       }
     }
-
   };
-
-  console.log("filteredCart", cart);
 
   useEffect(() => {
     setList(selector);
@@ -54,14 +51,14 @@ const Section = () => {
     for (let item of cartList) {
       if (item.id === id) {
         item.quantity -= 1;
-        setCart([...cartList]);
+        let fcartList = cartList.filter((elem) => elem.quantity > 0);
+        setCart([...fcartList]);
       }
     }
   }
 
-  function handleTotal(){
-  
-    dispatch(Total(cart))
+  function handleTotal() {
+    dispatch(Total(cart));
   }
   return (
     <>
@@ -71,11 +68,12 @@ const Section = () => {
             {list?.map((item) => {
               return (
                 <div className="section-one-product" key={item.id}>
-                  <div className="section-one-product-title"> {item.title}</div>
-                  <div className="section-one-product-image">
+                  <h3> {item.title}</h3>
+                  <div>
                     <img
                       src={item.thumbnail}
-                      width="250px"
+                      width="180px"
+                      height="220px"
                       alt="product-thumbnail"
                     />
                   </div>
@@ -86,12 +84,14 @@ const Section = () => {
                     <b>Rating</b> :- {item.rating}
                   </div>
                   <br />
-                  <div>{item.description}</div>
+                  <div className="section-one-product-description">
+                    {item.description}
+                  </div>
 
                   <button onClick={() => handleAddToCart(item.id)}>
                     Add to Cart
                   </button>
-                  <div>
+                  <div style={{ margin: "1rem" }}>
                     <button onClick={() => handleRemoveFromCart(item.id)}>
                       Remove from Cart
                     </button>
