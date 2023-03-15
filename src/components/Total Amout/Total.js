@@ -39,12 +39,13 @@ const Total = () => {
   }
 
   function handleInput(e){
-setState(state+1)
+setState(e.target.value)
 
 }
   return (
     <div className="total-container">
       <h2>Total Amount</h2>
+      {state}
       <table className="total-container-table">
         <th>Title</th>
         <th>Quantity</th>
