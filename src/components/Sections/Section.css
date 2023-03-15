@@ -1,6 +1,7 @@
 
 
 .section-one-main-container{
+    position: relative;
     border: 1px solid rgb(59, 59, 59);
     padding: 2rem 1rem;
     margin: 0rem 2rem;
@@ -19,4 +20,30 @@
     margin: 1rem;
     border: 5px solid rgb(197, 197, 197);
     border-radius: 1rem;
+}
+
+
+.section-one-cart-product{
+    border: 2px solid grey;
+}
+
+
+.show-cart{
+    display: block;
+    padding: 6rem 2rem 0rem 4rem;
+    height: 100%;
+    top:5rem;
+    border-radius: 1rem;
+    background-color: rgb(214, 214, 214);
+    position: absolute;
+    right: -30px;
+}
+
+.hide-cart{
+    display: none;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
 }

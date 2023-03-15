@@ -5,9 +5,9 @@ import Section from "../../components/Sections/Section";
 const Home = () => {
   return (
     <div className="home-page">
-      <Header />
+      
       <Section />
-      <Footer />
+   
     </div>
   );
 };

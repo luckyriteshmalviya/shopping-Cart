@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
   isLoading: false,
   productDetails: [],
-  user: {},
+  cart: [],
   value: 0,
 };
 
@@ -17,6 +17,10 @@ const userSlice = createSlice({
   name: "userSlice",
   initialState,
   reducers: {
+    Total: (state, action)=>{
+        console.log(state, "action", action)
+    state.cart = action.payload
+    }
    
   },
   extraReducers: (builder) => {
@@ -28,3 +32,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+export const { Total } = userSlice.actions;
