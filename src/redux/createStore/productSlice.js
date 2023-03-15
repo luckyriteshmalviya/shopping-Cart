@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export const productDetails = createAsyncThunk("details", async () => {
-  const useData = await fetch("https://dummyjson.com/products?limit=10");
+  const useData = await fetch("https://dummyjson.com/products?limit=15");
   const parsedData = await useData.json();
   console.log("ap result",parsedData.products)
   return parsedData.products;
@@ -26,5 +26,5 @@ const userSlice = createSlice({
     });
   },
 });
-// export const {  } = userSlice.actions;
+
 export default userSlice.reducer;

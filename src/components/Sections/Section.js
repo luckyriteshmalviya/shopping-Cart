@@ -12,20 +12,20 @@ const Section = () => {
   }, []);
 
   const selector = useSelector((state) => state.productSlice.productDetails);
-  console.log("selector", selector);
 
   const [list, setList] = useState([...selector]);
 
-  const handleClick = (e) => {
-    console.log(e);
-    
-    let selectedProducts = list.filter((data)=>data.id==e)
+  const handleClick = (id) => {
+    let selectedProducts = list.find((data) => data.id === id);
 
-    selectedProducts = new Set([...selectedProducts]);
-    console.log("==============", selectedProducts, "++++++++++++++++++++++");
+    let modifiedProd = {...selectedProducts, quantity:1}
 
-    setCart([...cart, ...selectedProducts]);
+
+    // console.log( typeof(selectedProducts),"==============", selectedProducts, "++++++++++++++++++++++");
+
+    setCart([...cart, modifiedProd]);
   };
+
   console.log(cart);
   useEffect(() => {
     setList(selector);
@@ -37,6 +37,7 @@ const Section = () => {
         <div>
           <div className="section-one-main-container-products">
             {list?.map((item) => {
+              console.log(item.thumbnail)
               return (
                 <div className="section-one-product" key={item.id}>
                   <div className="section-one-product-title"> {item.title}</div>
@@ -48,9 +49,9 @@ const Section = () => {
                     />
                   </div>
                   <span className="section-one-product-price">
-                    Price :- {item.price}
+                    <b>Price</b> :- {item.price}
                   </span>
-                  <div>Rating :- {item.rating}</div>
+                  <div><b>Rating</b> :- {item.rating}</div>
                   <br />
                   <div>{item.description}</div>
 
@@ -63,7 +64,30 @@ const Section = () => {
           </div>
         </div>
 
-        <div>side</div>
+        <div>
+          {" "}
+          <h1>Cart</h1>
+          {cart.map((item, index) => {
+            return (
+              <div key={index}>
+                <div className="section-one-product-title"> {item.title}</div>
+                <div className="section-one-product-image">
+                  <img
+                    src={item.thumbnail}
+                    width="250px"
+                    alt="product-thumbnail"
+                  />
+                </div>
+                <span className="section-one-product-price">
+                  Price :- {item.price}
+                </span>
+                <div>quantity :- {item.quantity}</div>
+
+<div><b>Amount:-</b> </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
