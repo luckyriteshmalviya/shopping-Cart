@@ -1,11 +1,27 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
 const Header = () => {
-  return <div className="header-container">
-  <h1><Link className="link" to={"/about"}>About</Link></h1>
-  <h1><Link className="link" to={"/"}>Inheritx</Link></h1>
-  <h1><Link className="link" to={"/contact"}>Contact</Link></h1>
-  </div>;
+  return <header className="header-container">
+  <div><Link className="header-link logo" to={"/"}>INHERITX</Link></div>
+  <div className="searchBar" >
+          <input
+            className="searchInput"
+            placeholder="Search Here.."
+            defaultValue=""
+          />
+          <div >
+            <i className="bx bx-search"></i>
+          </div>
+        </div>
+        
+  <div><Link className="header-link" to={"/"}>Home</Link></div>
+  <div><Link className="header-link" to={"/about"}>About</Link></div>
+  <div><Link className="header-link" to={"/contact"}>Contact Us</Link></div>   
+  <div class="header-right">
+            <div class="login">log in</div>
+            <div class="signin">Sign up</div>
+            </div>
+  </header>;
 };
 
 export default Header;

@@ -2,10 +2,9 @@ import "./Cart.css";
 
 const Cart = ({ cart }) => {
   return (
-    <>
+    
+      <div className="cart-product-container" style={{border: "1px solid red"}}>
       <h4>Products in Cart :- {cart.length}</h4>
-
-      <div className="cart-product-container">
         {cart.map((item, index) => {
           return (
             <div key={index} className="cart-product">
@@ -27,7 +26,7 @@ const Cart = ({ cart }) => {
           );
         })}
       </div>
-    </>
+    
   );
 };
 

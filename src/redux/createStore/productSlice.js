@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const productDetails = createAsyncThunk("details", async () => {
-  const useData = await fetch("https://dummyjson.com/products?limit=15");
+  const useData = await fetch("https://dummyjson.com/products?limit=20");
   const parsedData = await useData.json();
   return parsedData.products;
 });
@@ -24,6 +24,20 @@ const userSlice = createSlice({
     Updated: (state, action) => {
       state.updatedCart = [...state, action.payload];
     },
+
+    ADD: (state, action) =>{
+      let newQuantityIndex = state.cart.findIndex((data)=>data.id === action.payload)   
+      let modifiedCartList = state.cart[newQuantityIndex]
+      modifiedCartList.quantity +=1
+      },
+
+      SUBTRACT: (state, action) =>{
+        let newQuantityIndex = state.cart.findIndex((data)=>data.id === action.payload)   
+        let modifiedCartList = state.cart[newQuantityIndex]
+        console.log("modifyList",modifiedCartList.quantity)
+        if(modifiedCartList.quantity>0){
+        modifiedCartList.quantity -=1}
+        }  
   },
   extraReducers: (builder) => {
     builder.addCase(productDetails.fulfilled, (state, action) => {
@@ -34,4 +48,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { Total } = userSlice.actions;
+export const { Total, ADD, SUBTRACT } = userSlice.actions;
