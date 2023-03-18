@@ -10,10 +10,7 @@ const Cart = () => {
         return (
           <div key={item.id} className="cart-product">
             <b> {item.title}</b>
-            
               <img className="cart-product-image" src={item.thumbnail}  alt="product-thumbnail" />
-            
-
             <div className="cart-product-details">
               <div>Price</div>
               <div>{item.price}</div>

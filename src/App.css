@@ -1,8 +1,8 @@
 .App {
   text-align: center;
-    display: flex;
-    overflow-x: hidden;
-    flex-direction: column;
-    height: 100vh;
-    font-family: "Inter", sans-serif;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
 }

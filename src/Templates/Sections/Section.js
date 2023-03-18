@@ -17,10 +17,10 @@ const Section = () => {
 
   return (
     <>
-      <div  >
-        <Link to={"/total"} style={{display: "flex", justifyContent: "flex-end", alignItems: "center",margin: "1rem", gap: "4px", textDecoration: "none"}}>
+      <div>
+        <Link className="section-one-go-to-cart-link" to={"/total"}>
           <MidSizeButton text="Go to Shoping Cart" />
-        <img src={ShopingCart} alt="shoping-cart" width="35px" />
+          <img src={ShopingCart} alt="shoping-cart" width="35px" />
         </Link>
       </div>
 

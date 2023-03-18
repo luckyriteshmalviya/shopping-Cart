@@ -16,10 +16,8 @@ const DecButton = () => {
   );
 };
 
-const MidSizeButton = ({text})=>{
-  return(
-    <div class="mid-size-button">{text}</div>
-  )
-}
+const MidSizeButton = ({ text }) => {
+  return <div class="mid-size-button">{text}</div>;
+};
 
 export { IncButton, DecButton, MidSizeButton };

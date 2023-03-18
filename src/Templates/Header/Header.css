@@ -21,6 +21,13 @@
   text-decoration: none;
 }
 
+.header-link:hover{
+  color: rgb(80, 80, 80);
+  text-decoration: underline;
+}
+
+
+
 .searchBar {
   width: 32%;
   height: 1.86rem;

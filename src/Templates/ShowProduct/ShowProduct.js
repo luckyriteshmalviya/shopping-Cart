@@ -1,12 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./ShowProduct.css";
 import { Total } from "../../redux/createStore/productSlice";
-import {IncButton,  DecButton } from "../../Components/Buttons/Button";
+import { IncButton, DecButton } from "../../Components/Buttons/Button";
+import Slider from "react-slick";
 
 const ShowProduct = () => {
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.productSlice.productDetails);
   const reduxCart = useSelector((state) => state.productSlice.cart);
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 100,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
 
   const handleAddToCart = (id) => {
     let selectedProducts = selector?.find((data) => data.id === id);
@@ -45,20 +55,24 @@ const ShowProduct = () => {
       {selector?.map((item) => {
         return (
           <div className="sample" key={item.id}>
-            <div style={{ position: "relative" }}>
-              <img
-                style={{ borderRadius: "10px" }}
-                className="sample-image"
-                src={item.images[0]}
-                alt="product"
-              />
+            <div className="sample-image-slider-container">
+              <Slider {...settings}>
+                {item?.images?.map((data, index) => {
+                  return (
+                    <div key={index}>
+                      <img className="sample-image" src={data} alt="product" />
+                    </div>
+                  );
+                })}
+              </Slider>
               <div className="sample-cart">
-                <div onClick={() => handleAddToCart(item.id)}>   <IncButton /> </div>
-              
+                <div onClick={() => handleAddToCart(item.id)}>
+                  {" "}
+                  <IncButton />{" "}
+                </div>
+
                 <i className="bx bx-cart"></i>
-                <div
-                  onClick={() => handleRemoveFromCart(item.id)}
-                >
+                <div onClick={() => handleRemoveFromCart(item.id)}>
                   <DecButton />
                 </div>
               </div>
@@ -66,19 +80,16 @@ const ShowProduct = () => {
             </div>
 
             <div className="sample-detail-1">
-              <div style={{ whiteSpace: "nowrap", width: "70%", textAlign: "left",textOverflow: "ellipsis", overflowX: "hidden" }}>{item.title}</div>
+              <div className="sample-detail-1-title">{item.title}</div>
               <div className="rating">{item.rating}</div>
             </div>
 
-            <div className="sample-detail-2" style={{ color: "gray" }}>
+            <div className="sample-detail-2">
               <div>Price</div>
               <div>{item.price}</div>
             </div>
 
-            <div
-              className="sample-detail-3"
-             
-            >
+            <div className="sample-detail-3">
               <div className="sample-description">{item.description}</div>
             </div>
           </div>

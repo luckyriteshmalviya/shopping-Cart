@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
-import Header from "./Templates/Header/Header"
+import Header from "./Templates/Header/Header";
 import Footer from "./Templates/Footer/Footer";
 import About from "./Pages/About/About.js";
 import ContactUs from "./Pages/Contact/ContactUs";
@@ -9,17 +9,16 @@ import Total from "./Pages/Total Amout/Total";
 
 function App() {
   return (
-    
     <div className="App">
-    <BrowserRouter>
+      <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/total" element={<Total />} />
-          <Route path="/about" element={<About /> } />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
-          <Footer />
+        <Footer />
       </BrowserRouter>
     </div>
   );

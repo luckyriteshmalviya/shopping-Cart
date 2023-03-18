@@ -1,4 +1,4 @@
-import Section from '../../Templates/Sections/Section'
+import Section from "../../Templates/Sections/Section";
 
 const Home = () => {
   return (
