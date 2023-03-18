@@ -25,19 +25,24 @@ const userSlice = createSlice({
       state.updatedCart = [...state, action.payload];
     },
 
-    ADD: (state, action) =>{
-      let newQuantityIndex = state.cart.findIndex((data)=>data.id === action.payload)   
-      let modifiedCartList = state.cart[newQuantityIndex]
-      modifiedCartList.quantity +=1
-      },
+    ADD: (state, action) => {
+      let newQuantityIndex = state.cart.findIndex(
+        (data) => data.id === action.payload
+      );
+      let modifiedCartList = state.cart[newQuantityIndex];
+      modifiedCartList.quantity += 1;
+    },
 
-      SUBTRACT: (state, action) =>{
-        let newQuantityIndex = state.cart.findIndex((data)=>data.id === action.payload)   
-        let modifiedCartList = state.cart[newQuantityIndex]
-        console.log("modifyList",modifiedCartList.quantity)
-        if(modifiedCartList.quantity>0){
-        modifiedCartList.quantity -=1}
-        }  
+    SUBTRACT: (state, action) => {
+      let newQuantityIndex = state.cart.findIndex(
+        (data) => data.id === action.payload
+      );
+      let modifiedCartList = state.cart[newQuantityIndex];
+      console.log("modifyList", modifiedCartList.quantity);
+      if (modifiedCartList.quantity > 0) {
+        modifiedCartList.quantity -= 1;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(productDetails.fulfilled, (state, action) => {

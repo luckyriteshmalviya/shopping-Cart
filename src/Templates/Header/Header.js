@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
+
 const Header = () => {
   return <header className="header-container">
   <div><Link className="header-link logo" to={"/"}>INHERITX</Link></div>

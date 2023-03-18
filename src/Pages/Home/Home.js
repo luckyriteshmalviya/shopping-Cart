@@ -1,6 +1,4 @@
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
-import Section from "../../components/Sections/Section";
+import Section from '../../Templates/Sections/Section'
 
 const Home = () => {
   return (

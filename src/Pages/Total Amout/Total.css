@@ -1,0 +1,30 @@
+.shoping-cart-container{
+  padding: 1rem;
+}
+
+.shoping-cart-container-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoping-cart-list{
+  margin: 2rem;
+  box-shadow: 6px 6px 10px #676767;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 1rem;
+}
+
+.shoping-cart-item{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 4rem;
+    padding: 1rem 0rem ;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.shoping-cart-detail-style{
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+}

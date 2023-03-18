@@ -1,11 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Total from "./components/Total Amout/Total";
+import Header from "./Templates/Header/Header"
+import Footer from "./Templates/Footer/Footer";
 import About from "./Pages/About/About.js";
 import ContactUs from "./Pages/Contact/ContactUs";
+import Total from "./Pages/Total Amout/Total";
 
 function App() {
   return (

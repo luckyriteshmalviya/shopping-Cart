@@ -22,10 +22,10 @@ const Footer = () => {
       </div>
 
       <div className="footer-lower-section">
-        <img src={facebook} alt="facebook" />
-        <img src={linkedin} alt="linkedin" />
-        <img src={twitter} alt="twitter" />
-        <img src={youtube} alt="youtube" />
+        <img className="footer-image" src={facebook} alt="facebook" />
+        <img className="footer-image" src={linkedin} alt="linkedin" />
+        <img className="footer-image" src={twitter} alt="twitter" />
+        <img className="footer-image" src={youtube} alt="youtube" />
       </div>
       </footer>
 
