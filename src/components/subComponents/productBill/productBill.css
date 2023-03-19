@@ -1,0 +1,14 @@
+.shoping-cart-product-bill {
+  width: 30%;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.shoping-cart-product-bill-style {
+  display: flex;
+  justify-content: space-between;
+}
+
+abbr {
+  text-decoration: none;
+}

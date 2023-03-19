@@ -1,8 +1,8 @@
 import React from "react";
 
-function About() {
+function ContactUs() {
   return (
-    <div className="about-container">
+    <div>
       <h1>Contact Us</h1>
       <br />
       <br />
@@ -12,4 +12,4 @@ function About() {
   );
 }
 
-export default About;
+export default ContactUs;

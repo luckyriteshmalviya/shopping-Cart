@@ -1,0 +1,49 @@
+.sample-detail-1,
+.sample-detail-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sample-detail-1-title {
+  white-space: nowrap;
+  width: 70%;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.sample-detail-2 {
+  padding: 5px 0;
+  color: grey;
+}
+
+.sample-detail-3 {
+  border-top: 1px solid rgb(168, 168, 168);
+  display: flex;
+  padding: 6px 0 4px 0;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgb(102, 102, 102);
+}
+
+.sample-description {
+  font-size: 14px;
+}
+
+.rating {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 0 4px 0 5px;
+  font-size: 15px;
+}
+
+.sample-detail-3-ic {
+  width: 20px;
+}
+
+.sample-detail-3-ic-2 {
+  width: 38px;
+  height: 20px;
+}

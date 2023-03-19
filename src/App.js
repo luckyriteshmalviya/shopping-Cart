@@ -1,11 +1,11 @@
-import "./App.css";
+import "./app.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home/Home";
-import Header from "./Templates/Header/Header";
-import Footer from "./Templates/Footer/Footer";
-import About from "./Pages/About/About.js";
-import ContactUs from "./Pages/Contact/ContactUs";
-import ShopingCart from "./Pages/Total Amout/Total";
+import Home from "./pages/home/home";
+import Header from "./components/mainComponents/header/header";
+import Footer from "./components/mainComponents/footer/footer";
+import About from "./pages/about/about";
+import ContactUs from "./pages/contact/contactUs";
+import ShopingCart from "./pages/shopingCart/shopingCart";
 
 function App() {
   return (

@@ -1,10 +1,10 @@
-import './about.css'
+import "./about.css";
 import React from "react";
-import { MidSizeButton } from "../../Components/Buttons/Button";
+import { MidSizeButton } from "../../components/subComponents/buttons/button";
 
 function About() {
   return (
-    <div className="about-container">
+    <div>
       <h4>About Us</h4>
       <h1>Ritesh Malviya</h1>
       <a

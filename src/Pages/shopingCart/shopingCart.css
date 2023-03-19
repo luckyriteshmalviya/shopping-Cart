@@ -1,0 +1,10 @@
+.shoping-cart-container {
+  padding: 1rem;
+}
+
+
+.shoping-cart-payment-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem;
+}

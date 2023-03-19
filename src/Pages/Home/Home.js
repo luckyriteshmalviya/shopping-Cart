@@ -1,10 +1,10 @@
-import Section from "../../Templates/Sections/Section";
+import Section from "../../components/mainComponents/sections/section";
 
 const Home = () => {
   return (
-    <div className="home-page">
+    <>
       <Section />
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,23 @@
+.shoping-cart-container-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2.1rem;
+}
+
+.shoping-cart-container-header-right-part {
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  color: grey;
+  display: flex;
+  gap: 1rem;
+}
+
+.shoping-cart-container-header-right-part-link {
+  text-decoration: none;
+}
+
+.shoping-cart-container-header-right-part-remove-all {
+  color: rgb(145, 34, 34);
+  font-weight: 600;
+  text-decoration: underline;
+}
