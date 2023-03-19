@@ -5,7 +5,7 @@ import Header from "./Templates/Header/Header";
 import Footer from "./Templates/Footer/Footer";
 import About from "./Pages/About/About.js";
 import ContactUs from "./Pages/Contact/ContactUs";
-import Total from "./Pages/Total Amout/Total";
+import ShopingCart from "./Pages/Total Amout/Total";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/total" element={<Total />} />
+          <Route path="/total" element={<ShopingCart />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./ShowProduct.css";
 import { Total } from "../../redux/createStore/productSlice";
-import { IncButton, DecButton } from "../../Components/Buttons/Button";
+import { SmallSizeButton } from "../../Components/Buttons/Button";
 import Slider from "react-slick";
 
 const ShowProduct = () => {
@@ -67,13 +67,12 @@ const ShowProduct = () => {
               </Slider>
               <div className="sample-cart">
                 <div onClick={() => handleAddToCart(item.id)}>
-                  {" "}
-                  <IncButton />{" "}
+                  <SmallSizeButton text="+" title="Add to Cart" />
                 </div>
 
                 <i className="bx bx-cart"></i>
                 <div onClick={() => handleRemoveFromCart(item.id)}>
-                  <DecButton />
+                  <SmallSizeButton text="-" title="Remove from Cart" />
                 </div>
               </div>
               <div className="sample-brand">{item.brand}</div>

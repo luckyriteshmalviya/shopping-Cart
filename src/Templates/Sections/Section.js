@@ -17,7 +17,12 @@ const Section = () => {
 
   return (
     <>
-      <div>
+      <div className="section-one-header">
+        <abbr className="section-one-header-left-part" title="coming soon...">
+          <div>Filter</div>
+          <div> / </div>
+          <div>Sort</div>
+        </abbr>
         <Link className="section-one-go-to-cart-link" to={"/total"}>
           <MidSizeButton text="Go to Shoping Cart" />
           <img src={ShopingCart} alt="shoping-cart" width="35px" />
