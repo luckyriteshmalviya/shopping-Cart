@@ -34,7 +34,6 @@
   border-radius: 0.4rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   box-shadow: 4px 4px 6px 0px #727272;
   padding: 0.2em 0.6em;
 }
