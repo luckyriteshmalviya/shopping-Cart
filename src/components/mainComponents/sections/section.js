@@ -24,7 +24,7 @@ const Section = () => {
           <div>Sort</div>
         </abbr>
         <Link className="section-one-go-to-cart-link" to={"/total"}>
-          <MidSizeButton text="Go to Shoping Cart" />
+          Go to Shoping Cart
           <img src={ShopingCart} alt="shoping-cart" width="35px" />
         </Link>
       </div>
