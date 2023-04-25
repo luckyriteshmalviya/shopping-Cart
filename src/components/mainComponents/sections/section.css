@@ -17,11 +17,21 @@
 
 .section-one-go-to-cart-link {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   margin: 1rem;
-  gap: 4px;
+  gap: 8px;    color: #444;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   text-decoration: none;
+  background: #efefef;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, 0.7), -6px -6px 10px rgba(255, 255, 255, 0.5), 6px 6px 8px rgba(255, 255, 255, 0.075), 6px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.section-one-go-to-cart-link:hover {
+  box-shadow: inset -2px -2px 6px hsla(0,0%,100%,.7), inset -2px -2px 4px hsla(0,0%,100%,.5), inset 2px 2px 2px hsla(0,0%,100%,.075), inset 2px 2px 4px rgba(0,0,0,.15);
 }
 
 .section-one-main-container {
