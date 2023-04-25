@@ -35,7 +35,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 2px 3px 10px 0px;
+  box-shadow: 4px 4px 6px 0px #727272;
   padding: 0.2em 0.6em;
 }
 
