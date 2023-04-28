@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const productDetails = createAsyncThunk("details", async () => {
-  const useData = await fetch("https://dummyjson.com/products?limit=21");
+  const useData = await fetch("https://dummyjson.com/products?limit=96");
   const parsedData = await useData.json();
   return parsedData.products;
 });
