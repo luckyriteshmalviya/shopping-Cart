@@ -33,6 +33,7 @@
 .footer-image {
   width: 2rem;
   cursor: pointer;
+  filter: invert(1);
 }
 
 @media only screen and (max-width: 560px) {
