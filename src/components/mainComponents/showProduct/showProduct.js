@@ -5,7 +5,7 @@ import { SmallSizeButton } from "../../subComponents/buttons/button";
 import Slider from "react-slick";
 import ShowProductDetails from "../../subComponents/showProductDetails/showProductDetails";
 import { useState } from "react";
-import Pagination from "./Pagination";
+import Pagination from "./pagination";
 
 const ShowProduct = () => {
   const [currentPage, setCurrentPage] = useState(1);
