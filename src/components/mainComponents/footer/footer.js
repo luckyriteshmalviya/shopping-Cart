@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer-container">
-      <div className="footer-logo">INHERITX</div>
+      <div className="footer-logo">R-Mart</div>
       <div className="footer-links-section">
         <Link to={"/"} className="footer-links">
           Home
