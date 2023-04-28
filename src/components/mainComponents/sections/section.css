@@ -43,3 +43,11 @@
   justify-content: space-between;
   gap: 1rem;
 }
+
+.section-one-main-container-show-product{
+  padding: 0rem 2rem;
+    width: 80%;
+    display: flex;
+    border-right: 1px solid rgb(200, 200, 200);
+}
+
