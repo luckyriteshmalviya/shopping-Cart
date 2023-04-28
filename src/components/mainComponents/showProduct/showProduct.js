@@ -7,11 +7,11 @@ import ShowProductDetails from "../../subComponents/showProductDetails/showProdu
 import { useState } from "react";
 import Pagination from "./pagination";
 
-const ShowProduct = () => {
+const ShowProduct = ({productList}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(8);
   const dispatch = useDispatch();
-  const selector = useSelector((state) => state.productSlice.productDetails);
+  const selector = productList;
   const reduxCart = useSelector((state) => state.productSlice.cart);
 
   var settings = {
