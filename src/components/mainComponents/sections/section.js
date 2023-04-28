@@ -30,10 +30,14 @@ const Section = () => {
       </div>
 
       <div className="section-one-main-container">
-        <Suspense fallback={<div>loading... </div>}>
-          <ShowProduct />
-        </Suspense>
-        <CartList />
+        <div className="section-one-main-container-show-product">
+          <Suspense fallback={<div>loading... </div>}>
+            <ShowProduct />
+          </Suspense>
+        </div>
+        <div className="section-one-main-container-cartlist">
+          <CartList />
+        </div>
       </div>
     </>
   );
