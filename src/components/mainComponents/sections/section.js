@@ -13,7 +13,7 @@ const Section = () => {
   const [products, setProducts] = useState();
   const selector = useSelector((state) => state.productSlice.productDetails);
 
-  const [categories, setCategories] = useState("All Categories");
+  const [categories, setCategories] = useState("All");
 
   const handleFilterChange = (e) => {
     setCategories(e.target.value);
@@ -58,7 +58,7 @@ const Section = () => {
       <div className="section-one-main-container">
         <div className="section-one-main-container-show-product">
           <Suspense fallback={<div>loading... </div>}>
-            <ShowProduct productList={categories==="All Categories"? selector : products} />
+            <ShowProduct productList={categories==="All"? selector : products} />
           </Suspense>
         </div>
         <div className="section-one-main-container-cartlist">
