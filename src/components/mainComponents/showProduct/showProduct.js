@@ -4,8 +4,12 @@ import { Total } from "../../../redux/productSlice";
 import { SmallSizeButton } from "../../subComponents/buttons/button";
 import Slider from "react-slick";
 import ShowProductDetails from "../../subComponents/showProductDetails/showProductDetails";
+import { useState } from "react";
+import Pagination from "./Pagination";
 
 const ShowProduct = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(8);
   const dispatch = useDispatch();
   const selector = useSelector((state) => state.productSlice.productDetails);
   const reduxCart = useSelector((state) => state.productSlice.cart);
@@ -18,6 +22,10 @@ const ShowProduct = () => {
     slidesToScroll: 1,
     arrows: false,
   };
+  
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = selector.slice(firstPostIndex, lastPostIndex); 
 
   const handleAddToCart = (id) => {
     let selectedProducts = selector?.find((data) => data.id === id);
@@ -52,8 +60,16 @@ const ShowProduct = () => {
   }
 
   return (
-    <div className="showProduct-container">
-      {selector?.map((item) => {
+    <div>
+       <Pagination
+                totalPosts={selector.length}
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+       />
+    
+    <div className="showProduct-container" >
+      {currentPosts?.map((item) => {
         return (
           <div className="sample" key={item.id}>
             <div className="sample-image-slider-container">
@@ -83,6 +99,7 @@ const ShowProduct = () => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 };
