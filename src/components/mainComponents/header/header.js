@@ -6,7 +6,7 @@ const Header = () => {
     <header className="header-container">
       <div>
         <Link className="header-link logo" to={"/"}>
-          INHERITX
+         R-Mart
         </Link>
       </div>
       <div className="searchBar">
