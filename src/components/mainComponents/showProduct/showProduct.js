@@ -25,7 +25,7 @@ const ShowProduct = ({productList}) => {
   
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentPosts = selector.slice(firstPostIndex, lastPostIndex); 
+  const currentPosts = selector.length>lastPostIndex ? selector.slice(firstPostIndex, lastPostIndex) : selector; 
 
   const handleAddToCart = (id) => {
     let selectedProducts = selector?.find((data) => data.id === id);
