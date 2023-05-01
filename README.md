@@ -1,4 +1,4 @@
 
 
 
-https://shoping-mart.netlify.app/
+https://ritesh-mart.netlify.app/
