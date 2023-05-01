@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./header.css";
+import { useState } from "react";
 
 const Header = () => {
+  const [searchValue, setsearchValue] = useState("")
+  const navigate = useNavigate();
+
+  function handleInput (e){
+      if(e.key==="Enter"){
+        e.preventDefault();
+        navigate(searchValue? `/?id=${searchValue}`: "/")
+      }
+  }
+
   return (
     <header className="header-container">
       <div>
@@ -14,14 +25,19 @@ const Header = () => {
           className="searchInput"
           placeholder="Search Here.."
           defaultValue=""
+          value={searchValue}
+          onChange={(e)=>setsearchValue(e.target.value)}
+          onKeyUp={handleInput}
         />
         <div>
+        <Link className="header-link" to={searchValue ? `/?id=${searchValue}`: "/"}>
           <i className="bx bx-search"></i>
+        </Link>
         </div>
       </div>
 
       <div>
-        <Link className="header-link" to={"/"}>
+        <Link className="header-link" to="/">
           Home
         </Link>
       </div>
